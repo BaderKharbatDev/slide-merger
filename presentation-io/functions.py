@@ -9,10 +9,9 @@ def openPresentation(filepath, is_main_file):
         else:
             zip_ref.extractall("./files/sub-presentations")
 
-
 def createBlankMainPresentation():
     #deletes everything in the folder from prior testing
-    deleteMainProgramFile()
+    deleteProgramDirectory('program-files/main/')
 
     # creates a blank pres file
     root = Presentation()
@@ -25,8 +24,7 @@ def createBlankMainPresentation():
     #removes the original pptx file
     os.remove("program-files/current.pptx")
 
-def deleteMainProgramFile():
-    dir = 'program-files/main/'
+def deleteProgramDirectory(dir):
     for files in os.listdir(dir):
         path = os.path.join(dir, files)
         try:
@@ -34,6 +32,20 @@ def deleteMainProgramFile():
         except OSError:
             os.remove(path)
 
-createBlankMainPresentation()
+#Presentation Index is the index of the sub presentation in the sub-presentations file
+#Sub Slide Index is the index of the slide in the sub presentation
+#Slide Index is the new index of the slide in the main presentation.
+def addSlideToPresentation(sub_presentation_index, sub_slide_index, slide_index):
+    return
+
+def removeSlideFromPresentation(slide_index):
+    return
+
+def moveSlideToDifferentPosition(slide_index, new_index):
+    return
+
+def openSubPresentation(pptxDirectoryPath):
+    return
+
 
 
